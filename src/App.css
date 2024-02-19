@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+}
+.header{
+    font-size: 3rem;
+    color: white;
+}
+body{
+    background-color: rgb(226, 105, 61);
+}
+body #root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 3em;
+    margin: 3rem;
+}
+.addTask{
+    background-color: white;
+    border-radius: 5rem;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+}
+input{
+    border: none;
+    font-size: 2rem;
+    padding: 0.2em;
+}
+.addTask input:focus{
+    border: none;
+    border-bottom: 1px solid orangered;
+}
+.addTask input:active{
+    border: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.addTask button{
+    padding: 0.5em;
+    font-size: 2rem;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+}
+.addTask button:hover{
+    background-color: rgb(202, 55, 1);
+    color: white;
+}
+.taskList{
+    background-color: white;
+    border-radius: 3em;
+    width: 90%;
+    overflow: hidden;
+}
+.taskList .grey{
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.219);
+    margin: 0.5em;
+}
+.taskList ul{
+    width: 100%;
+}
+.taskList ul li{
+    list-style: none;
+    padding: 2em;
+    font-size: 2rem;
+    position: relative;
+    cursor: pointer;
+}
+.taskList ul li:hover{
+    background-color: rgb(240, 240, 240);
+}
+.actionBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    right: 0;
+    margin-right: 0.5em;
+}
+.confirmBtn{
+    background-color: green;
+    border: none;
+    box-shadow: none;
+    padding: 0.5em;
+    border-radius: 0.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.deleteBtn{
+    background-color: red;
+    border: none;
+    box-shadow: none;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+.deleteBtn img, .confirmBtn img{
+    height: 20px;
+    width: 20px;
+}
+.statusPending{
+    color: rgba(0, 0, 0, 0.404);
+}
+.statusDone{
+    color: green;
+}
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 2em;
+        width: 768px;
+        height: 100vh;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* For screens smaller than 576px */
+@media only screen and (max-width: 576px) {
+    .taskList ul li {
+        padding: 1em;
+        font-size: 1.8rem;
+    }
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media only screen and (max-width: 576px) {
+    input{
+        border: none;
+        font-size: 1.5rem;
+        padding: 0.2em;
+    }
+    .addTask button{
+        padding: 0.5em;
+        font-size: 1.5rem;
+        background-color: white;
+        border: none;
+        font-weight: bold;
+    }
+    .taskList ul li {
+        padding: 1em;
+        font-size: 1.8rem;
+    }
 }
